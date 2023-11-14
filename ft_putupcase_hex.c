@@ -21,6 +21,8 @@ static int	digit_count(int n)
 
 	number = n;
 	count = 0;
+		if (n == 0)
+		count++;
 	while (number != 0)
 	{
 		number /= 10;
@@ -34,17 +36,17 @@ int	ft_put_upcase_hex(unsigned int num)
 	char			*str;
 	char			*base;
 	unsigned int	number;
-	int				i;
-	int				j;
+	unsigned int				i;
+	unsigned int				j;
 
+	if (num == 0)
+		return (write(1, "0", 1));
 	str = (char *)malloc(digit_count(num) * sizeof(char));
 	if (str == NULL)
 		return (-1);
 	base = "0123456789ABCDEF";
 	number = num;
 	i = 0;
-	if (number == 0)
-		return (write(1, "0", 1));
 	while (number != 0)
 	{
 		str[i++] = base[number % 16];
