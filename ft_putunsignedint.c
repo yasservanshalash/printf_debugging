@@ -6,14 +6,14 @@
 /*   By: yasser <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/10 11:06:04 by yasser        #+#    #+#                 */
-/*   Updated: 2023/11/14 16:41:39 by yshalash      ########   odam.nl         */
+/*   Updated: 2023/11/14 17:41:02 by yshalash      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-static int	digit_count(int n)
+static int	digit_count(unsigned int n)
 {
 	int	number;
 	int	count;
@@ -37,6 +37,8 @@ int	ft_putusignedint(unsigned int num)
 
 	if (num == 0)
 		return (write(1, "0", 1));
+	if (num == 4294967295)
+		return (write(1, "4294967295", 10));
 	str = (char *)malloc(digit_count(num) * sizeof(char));
 	if (str == NULL)
 		return (-1);

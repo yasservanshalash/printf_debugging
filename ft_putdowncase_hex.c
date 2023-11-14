@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putdowncase_hex.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yasser <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 11:08:23 by yasser            #+#    #+#             */
-/*   Updated: 2023/11/13 20:22:06 by yasser           ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_putdowncase_hex.c                               :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: yasser <marvin@42.fr>                        +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/11/10 11:08:23 by yasser        #+#    #+#                 */
+/*   Updated: 2023/11/14 18:20:55 by yshalash      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static int	digit_count(int n)
+static int	digit_count(unsigned int n)
 {
 	int	number;
 	int	count;

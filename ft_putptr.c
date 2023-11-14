@@ -6,7 +6,7 @@
 /*   By: yasser <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/10 11:03:57 by yasser        #+#    #+#                 */
-/*   Updated: 2023/11/14 16:44:38 by yshalash      ########   odam.nl         */
+/*   Updated: 2023/11/14 18:11:56 by yshalash      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-static int	digit_count(int n)
+static int	digit_count(unsigned int n)
 {
 	int	number;
 	int	count;
@@ -42,7 +42,7 @@ int	ft_putptr(void *ptr)
         return 5;
     }
 	pointer_number = (unsigned long long)ptr;
-	str = (char *)malloc((digit_count(pointer_number)+ 3) * sizeof(char));
+	str = (char *)malloc((digit_count(pointer_number)) * sizeof(char));
 	base = "0123456789abcdef";
 	i = 0;
 	while (pointer_number != 0)

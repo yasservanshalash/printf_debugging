@@ -6,14 +6,14 @@
 /*   By: yasser <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/10 11:04:41 by yasser        #+#    #+#                 */
-/*   Updated: 2023/11/14 16:21:17 by yshalash      ########   odam.nl         */
+/*   Updated: 2023/11/14 17:41:02 by yshalash      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-static int	digit_count(int n)
+static int	digit_count(unsigned int n)
 {
 	int	number;
 	int	count;
