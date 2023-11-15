@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putnbr.c                                        :+:    :+:            */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: yasser <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/10 11:04:41 by yasser        #+#    #+#                 */
-/*   Updated: 2023/11/15 14:47:12 by yshalash      ########   odam.nl         */
+/*   Updated: 2023/11/15 15:03:14 by yasser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,22 @@ static int	digit_count(unsigned int n)
 	}
 	return (count);
 }
-static int return_function(int num)
+
+static int	return_function(int num)
 {
-		if (num < 0)
+	if (num < 0)
 		return (digit_count(num) + 1);
 	else
 		return (digit_count(num));
 }
 
-static int if_number_negative(int num)
+static int	if_number_negative(int num)
 {
-		write(1, "-", 1);
-		num = -num;
-		return (num);
+	write(1, "-", 1);
+	num = -num;
+	return (num);
 }
+
 int	ft_putnbr(int num)
 {
 	char	*str;

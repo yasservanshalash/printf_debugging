@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putunsignedint.c                                :+:    :+:            */
+/*   ft_putunsignedint.c                                :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: yasser <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/10 11:06:04 by yasser        #+#    #+#                 */
-/*   Updated: 2023/11/14 17:41:02 by yshalash      ########   odam.nl         */
+/*   Updated: 2023/11/15 15:04:06 by yasser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
 static int	digit_count(unsigned int n)
 {
 	unsigned int	number;
-	int	count;
+	int				count;
 
 	number = n;
 	count = 0;
@@ -31,11 +31,10 @@ static int	digit_count(unsigned int n)
 
 int	ft_putusignedint(unsigned int num)
 {
-	// printf("%u\n", num);
 	char			*str;
 	unsigned int	number;
-	unsigned int				i;
-	unsigned int				j;
+	unsigned int	i;
+	unsigned int	j;
 
 	if (num == 0)
 		return (write(1, "0", 1));

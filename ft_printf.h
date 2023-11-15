@@ -6,12 +6,12 @@
 /*   By: yasser <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:38:20 by yasser            #+#    #+#             */
-/*   Updated: 2023/11/13 20:38:21 by yasser           ###   ########.fr       */
+/*   Updated: 2023/11/15 15:04:27 by yasser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNCTIONS_H
-# define FUNCTIONS_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdio.h>
 # include <stdlib.h>

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putdowncase_hex.c                               :+:    :+:            */
+/*   ft_putdowncase_hex.c                               :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: yasser <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/10 11:08:23 by yasser        #+#    #+#                 */
-/*   Updated: 2023/11/15 14:49:48 by yshalash      ########   odam.nl         */
+/*   Updated: 2023/11/15 15:02:47 by yasser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,27 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static int  digit_count(unsigned int n)
+static int	digit_count(unsigned int n)
 {
-    int i;
-    i = 0;
-    if (n == 0)
-        i = 1;
-    while (n != 0)
-    {
-        n = n / 16;
-        i++;
-    }
-    return (i);
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		i = 1;
+	while (n != 0)
+	{
+		n = n / 16;
+		i++;
+	}
+	return (i);
 }
 
 int	ft_put_downcase_hex(unsigned int num)
 {
-	char			*str;
-	char			*base;
-	int				i;
-	int				j;
+	char	*str;
+	char	*base;
+	int		i;
+	int		j;
 
 	if (num == 0)
 		return (write(1, "0", 1));
