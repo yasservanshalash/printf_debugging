@@ -12,10 +12,11 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 static int	digit_count(unsigned int n)
 {
-	int	number;
+	unsigned int	number;
 	int	count;
 
 	number = n;
@@ -30,6 +31,7 @@ static int	digit_count(unsigned int n)
 
 int	ft_putusignedint(unsigned int num)
 {
+	// printf("%u\n", num);
 	char			*str;
 	unsigned int	number;
 	unsigned int				i;
@@ -55,3 +57,7 @@ int	ft_putusignedint(unsigned int num)
 	free(str);
 	return (j);
 }
+// int main()
+// {
+// 	ft_putusignedint(-10);
+// }
