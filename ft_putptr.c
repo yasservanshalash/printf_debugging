@@ -1,72 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putptr.c                                        :+:    :+:            */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: yasser <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/10 11:03:57 by yasser        #+#    #+#                 */
-/*   Updated: 2023/11/14 18:11:56 by yshalash      ########   odam.nl         */
+/*   Updated: 2023/11/14 22:39:15 by yasser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-static int digit_count_hex(unsigned long long n)
+static int	digit_count_hex(unsigned long long n)
 {
-	int count;
-	
+	int	count;
+
 	if (n == 0)
 		count = 1;
 	else
-		count =  0;
-    while (n != 0)
-    {
-        n /= 16;
-        count++;
-    }
-
-    return count;
+		count = 0;
+	while (n != 0)
+	{
+		n /= 16;
+		count++;
+	}
+	return (count);
 }
 
-int ft_putptr(void *ptr)
+int	ft_putptr(void *ptr)
 {
-    unsigned long long pointer_number;
-    char *str;
-    char *base;
-    int i;
-    int j;
+	unsigned long long	pointer_number;
+	char				*str;
+	char				*base;
+	int					i;
+	int					j;
 
-    if (ptr == NULL)
-    {
-        return write(1, "0x0", 3);
-    }
-
-    pointer_number = (unsigned long long)ptr;
-    str = (char *)malloc((digit_count_hex(pointer_number) + 2) * sizeof(char));
-    base = "0123456789abcdef";
-    i = 0;
-
-    while (pointer_number != 0)
-    {
-        str[i] = base[pointer_number % 16];
-        pointer_number /= 16;
-        i++;
-    }
-
-    j = i;
-    write(1, "0x", 2);
-
-    while (i > 0)
-    {
-        i--;
-        write(1, &str[i], 1);
-    }
-
-    free(str);
-    return (j + 2);
+	if (ptr == NULL)
+	{
+		return (write(1, "0x0", 3));
+	}
+	pointer_number = (unsigned long long)ptr;
+	str = (char *)malloc((digit_count_hex(pointer_number) + 2) * sizeof(char));
+	base = "0123456789abcdef";
+	i = 0;
+	while (pointer_number != 0)
+	{
+		str[i] = base[pointer_number % 16];
+		pointer_number /= 16;
+		i++;
+	}
+	j = i;
+	write(1, "0x", 2);
+	while (i > 0)
+	{
+		i--;
+		write(1, &str[i], 1);
+	}
+	free(str);
+	return (j + 2);
 }
 
 // static int	digit_count(unsigned int n)
@@ -94,7 +88,7 @@ int ft_putptr(void *ptr)
 
 // 	if (ptr == NULL) {
 //         write(1, "(nil)", 5);
-//         return 5;
+//         return (5);
 //     }
 // 	pointer_number = (unsigned long long)ptr;
 // 	str = (char *)malloc((digit_count(pointer_number)) * sizeof(char));

@@ -6,7 +6,7 @@
 /*   By: yasser <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:08:23 by yasser            #+#    #+#             */
-/*   Updated: 2023/11/13 20:22:06 by yasser           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:40:14 by yasser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static int	digit_count(int n)
+static int  digit_count(unsigned int n)
 {
-	int	number;
-	int	count;
-
-	number = n;
-	count = 0;
-	while (number != 0)
-	{
-		number /= 10;
-		count++;
-	}
-	return (count);
+    int i;
+    i = 0;
+    if (n == 0)
+        i = 1;
+    while (n != 0)
+    {
+        n = n / 16;
+        i++;
+    }
+    return (i);
 }
 
 int	ft_put_downcase_hex(unsigned int num)
@@ -39,7 +38,7 @@ int	ft_put_downcase_hex(unsigned int num)
 
 	if (num == 0)
 		return (write(1, "0", 1));
-	str = (char *)malloc(digit_count(num + 3) * sizeof(char));
+	str = (char *)malloc((digit_count(num) + 1) * sizeof(char));
 	if (str == NULL)
 		return (-1);
 	base = "0123456789abcdef";
@@ -52,13 +51,10 @@ int	ft_put_downcase_hex(unsigned int num)
 		str[i++] = base[number % 16];
 		number /= 16;
 	}
+	str[i] = '\0';
 	j = i;
 	while (i-- > 0)
 		write(1, &str[i], 1);
 	free(str);
 	return (j);
 }
-//  int main()
-//  {
-// 	ft_put_downcase_hex(400);
-//  }

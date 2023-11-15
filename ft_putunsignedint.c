@@ -39,7 +39,7 @@ int	ft_putusignedint(unsigned int num)
 		return (write(1, "0", 1));
 	if (num == 4294967295)
 		return (write(1, "4294967295", 10));
-	str = (char *)malloc(digit_count(num) * sizeof(char));
+str = (char *)malloc((digit_count(num) + 1) * sizeof(char)); // +1 for null terminator
 	if (str == NULL)
 		return (-1);
 	number = num;
@@ -49,6 +49,7 @@ int	ft_putusignedint(unsigned int num)
 		str[i++] = (number % 10) + '0';
 		number /= 10;
 	}
+	str[i] = '\0';
 	j = i;
 	while (i-- > 0)
 		write(1, &str[i], 1);
