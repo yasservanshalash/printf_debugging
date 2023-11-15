@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yasser <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/10 11:03:57 by yasser        #+#    #+#                 */
-/*   Updated: 2023/11/14 22:39:15 by yasser           ###   ########.fr       */
+/*   Updated: 2023/11/15 14:10:41 by yshalash      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_putptr(void *ptr)
 
 	if (ptr == NULL)
 	{
-		return (write(1, "0x0", 3));
+		return (write(1, "(nil)", 5));
 	}
 	pointer_number = (unsigned long long)ptr;
 	str = (char *)malloc((digit_count_hex(pointer_number) + 2) * sizeof(char));
