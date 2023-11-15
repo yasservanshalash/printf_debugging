@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putdowncase_hex.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yasser <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 11:08:23 by yasser            #+#    #+#             */
-/*   Updated: 2023/11/14 22:40:14 by yasser           ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_putdowncase_hex.c                               :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: yasser <marvin@42.fr>                        +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/11/10 11:08:23 by yasser        #+#    #+#                 */
+/*   Updated: 2023/11/15 14:49:48 by yshalash      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	ft_put_downcase_hex(unsigned int num)
 {
 	char			*str;
 	char			*base;
-	unsigned int	number;
 	int				i;
 	int				j;
 
@@ -42,14 +41,13 @@ int	ft_put_downcase_hex(unsigned int num)
 	if (str == NULL)
 		return (-1);
 	base = "0123456789abcdef";
-	number = num;
 	i = 0;
-	if (number == 0)
+	if (num == 0)
 		return (write(1, "0", 1));
-	while (number != 0)
+	while (num != 0)
 	{
-		str[i++] = base[number % 16];
-		number /= 16;
+		str[i++] = base[num % 16];
+		num /= 16;
 	}
 	str[i] = '\0';
 	j = i;

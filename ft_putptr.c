@@ -6,7 +6,7 @@
 /*   By: yasser <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/10 11:03:57 by yasser        #+#    #+#                 */
-/*   Updated: 2023/11/15 14:10:41 by yshalash      ########   odam.nl         */
+/*   Updated: 2023/11/15 14:38:33 by yshalash      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,13 @@ int	ft_putptr(void *ptr)
 	i = 0;
 	while (pointer_number != 0)
 	{
-		str[i] = base[pointer_number % 16];
+		str[i++] = base[pointer_number % 16];
 		pointer_number /= 16;
-		i++;
 	}
 	j = i;
 	write(1, "0x", 2);
-	while (i > 0)
-	{
-		i--;
+	while (i-- > 0)
 		write(1, &str[i], 1);
-	}
 	free(str);
 	return (j + 2);
 }
